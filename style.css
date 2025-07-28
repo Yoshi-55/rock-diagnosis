@@ -1,0 +1,316 @@
+/* リセット & 基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ローディング状態のスタイル */
+body:not(.loaded) {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #1a1a1a;
+    min-height: 100vh;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダー */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.7;
+    color: #cccccc;
+}
+
+/* 質問セクション */
+#question-container {
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 30px;
+    border: 1px solid #404040;
+    animation: fadeInUp 0.6s ease;
+}
+
+/* プログレスバーのスタイル */
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.progress-bar-bg {
+    flex: 1;
+    height: 8px;
+    background-color: #404040;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #ffffff;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+#progress-text {
+    font-weight: bold;
+    color: #cccccc;
+    min-width: 50px;
+    font-size: 0.9rem;
+}
+
+/* 質問セクション */
+.question-section h2 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+#question-text {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* 選択肢ボタン */
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-button {
+    padding: 18px 25px;
+    border: 1px solid #555555;
+    border-radius: 8px;
+    background: #333333;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+.option-button:hover {
+    background: #444444;
+    border-color: #666666;
+}
+
+.option-button:active {
+    background: #555555;
+}
+
+/* 結果セクション */
+#result-container {
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 40px;
+    border: 1px solid #404040;
+    text-align: center;
+}
+
+.result-section {
+    text-align: center;
+    animation: fadeInUp 0.6s ease;
+}
+
+.result-content {
+    background: #2d2d2d;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #404040;
+    margin-bottom: 2rem;
+}
+
+#result-type {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.score-display {
+    font-size: 1.3rem;
+    margin: 20px 0;
+    padding: 20px;
+    background: #333333;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #ffffff;
+    border: 1px solid #555555;
+}
+
+#result-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 20px 0;
+    color: #cccccc;
+}
+
+#result-advice {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 20px 0;
+    color: #aaaaaa;
+    font-style: italic;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.share-btn, .restart-btn {
+    padding: 12px 24px;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: normal;
+    background: #333333;
+    color: #ffffff;
+}
+
+.share-btn:hover, .restart-btn:hover {
+    background: #444444;
+    border-color: #666666;
+}
+
+.share-btn:active, .restart-btn:active {
+    background: #555555;
+}
+/* アニメーション */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    #question-container,
+    #result-container {
+        padding: 20px;
+    }
+
+    .option-button {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .share-btn, .restart-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .progress-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    #result-type {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    #question-container,
+    #result-container {
+        padding: 15px;
+    }
+
+    .option-button {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+    #result-type {
+        font-size: 1.8rem;
+    }
+}
+/* ユーティリティクラス */
+.hidden {
+    display: none !important;
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease;
+}
+
+/* ローディングアニメーション */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
