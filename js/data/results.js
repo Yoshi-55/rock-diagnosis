@@ -207,8 +207,8 @@ const ARTIST_DATA = {
       name: 'Dave Lombardo',
       band: 'Slayer',
       country: 'USA',
-      song: 'Raining Blood',
-      songUrl: 'https://www.youtube.com/watch?v=K6_zsJ8KPP0',
+      song: 'Angel Of Death',
+      songUrl: 'https://www.youtube.com/watch?v=tLkEQxqgdS4&list=RDtLkEQxqgdS4&start_radio=1',
       description: 'スラッシュメタル界屈指の高速ツーバスとパワフルなドラミングで知られる伝説的ドラマー',
       era: '1980s-現在',
       genre: 'Thrash Metal'
