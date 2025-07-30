@@ -1,5 +1,5 @@
 import { questions, getTotalQuestions, getMaxScore } from '../data/questions.js';
-import { getBandRoleResult, getRecommendedArtistsDetailByRole } from '../data/results.js';
+import { getBandRoleResult, getRecommendedArtistsDetailByRole, ARTIST_QUOTES } from '../data/results.js';
 import { getResultByScore } from '../data/results.js';
 import { shareToTwitter } from '../utils/share.js';
 
@@ -64,6 +64,8 @@ export class DiagnosisApp {
     }
 
     showResult() {
+        // 名言リストはresults.jsからimport
+        const randomQuote = ARTIST_QUOTES[Math.floor(Math.random() * ARTIST_QUOTES.length)];
         const totalScore = this.answers.reduce((sum, answer) => sum + answer.score, 0);
         const percentage = Math.round((totalScore / this.maxScore) * 100);
         const result = getResultByScore(percentage);
@@ -109,6 +111,13 @@ export class DiagnosisApp {
         document.getElementById('band-role-artist').innerHTML = bandArtistDetailHtml
             ? `おすすめアーティスト${bandArtistDetailHtml}`
             : '';
+
+        // 名言表示エリア
+        // 既存のartist-quote要素に名言をセット
+        const quoteElem = document.getElementById('artist-quote');
+        if (quoteElem) {
+            quoteElem.textContent = `\u201C${randomQuote}\u201D`;
+        }
 
         // 結果の色を設定（もしresult.colorがあれば）
         if (result.color) {

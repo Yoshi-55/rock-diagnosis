@@ -1,3 +1,26 @@
+// 英語のアーティスト名言リスト（20種）
+export const ARTIST_QUOTES = [
+    "Without music, life would be a mistake. – Friedrich Nietzsche",
+    "Music is a safe kind of high. – Jimi Hendrix",
+    "To live is to be musical. – Kurt Vonnegut",
+    "Music can change the world. – Ludwig van Beethoven",
+    "One good thing about music, when it hits you, you feel no pain. – Bob Marley",
+    "Where words fail, music speaks. – Hans Christian Andersen",
+    "Music is the strongest form of magic. – Marilyn Manson",
+    "If you have to ask what jazz is, you’ll never know. – Louis Armstrong",
+    "Music expresses that which cannot be said and on which it is impossible to be silent. – Victor Hugo",
+    "The beautiful thing about learning is nobody can take it away from you. – B.B. King",
+    "Music is the universal language of mankind. – Henry Wadsworth Longfellow",
+    "I don’t make music for eyes. I make music for ears. – Adele",
+    "The only truth is music. – Jack Kerouac",
+    "Music is forever; music should grow and mature with you, following you right on up until you die. – Paul Simon",
+    "If music be the food of love, play on. – William Shakespeare",
+    "Music is a world within itself, with a language we all understand. – Stevie Wonder",
+    "Music is my religion. – Jimi Hendrix",
+    "You can’t stay the same. If you’re a musician and a singer, you have to change, that’s the way it works. – Van Morrison",
+    "Music is the mediator between the spiritual and the sensual life. – Ludwig van Beethoven",
+    "The true beauty of music is that it connects people. – Roy Ayers"
+];
 import { questions } from './questions.js';
 // 結果パターン
 export const resultPatterns = [
